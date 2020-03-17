@@ -1,22 +1,10 @@
 $font-purple: #212353;
 $font-grey: #4b5d68;
 
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 470px) {
-  .top {
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-
 .screen {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: flex-end;
   background: linear-gradient(180deg, #f6fafd 0%, #ffffff 19.4%);
   width: 100%;
   font-family: "Muli", sans-serif;
@@ -27,8 +15,7 @@ $font-grey: #4b5d68;
   width: 100%;
   padding: 50px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 header {
   width: 100%;
@@ -88,15 +75,20 @@ header {
   transform: scale(1.1);
 }
 .headline {
-  max-width: 1248px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  // max-width: 1248px;
+  width: 80%;
+  // max-height: 650px;
+  height: 60vh;
   margin: auto;
+  display: flex;
+  // flex-wrap: wrap;
 }
 .headline-text {
   max-width: 645px;
   max-height: 464px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 h1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -131,19 +123,18 @@ p {
 .button2:hover {
   transform: scale(1.1);
 }
-.headline-img {
-  position: relative;
-}
 .shopping {
-  position: absolute;
-  right: 0;
+  // right: 0;
   bottom: 0;
-  width: 120%;
+  position: absolute;
+  max-width: 800px;
+  max-height: 468px;
 }
 .section2 {
   background: rgba(240, 99, 184, 0.15);
   border-radius: 50px;
-  max-width: 1117px;
+  // max-width: 1117px;
+  width: 60%;
   max-height: 560px;
   display: flex;
   justify-content: space-around;
@@ -165,11 +156,11 @@ h2 {
 }
 .text2 {
   max-width: 475px;
-  max-height: 310px;
 }
 .section3 {
   width: 100%;
-  max-height: 1026px;
+  max-height: 1138px;
+  margin-bottom: 20px;
 }
 h3 {
   color: $font-purple;
@@ -185,54 +176,87 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 50px;
   margin: auto;
 }
 .text3 {
   font-size: 16px;
+  max-width: 160px;
 }
-.grid-container3 {
+.parent3 {
   max-width: 1137px;
-  max-height: 846px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 20px;
+  max-height: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: auto;
 }
-.first {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
+.child1 {
+  background-image: url("../img/background-first.png");
+  background-repeat: no-repeat;
+  background-size: 350px 388px;
+  background-position: bottom right;
+  max-width: 531px;
+  min-height: 388px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  flex-grow: 1;
 }
-.grid-image1 {
+.child-image1 {
   max-width: 232px;
   max-height: 211px;
 }
-.second {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
+.child2 {
+  background-image: url("../img/background-second.png");
+  background-repeat: no-repeat;
+  background-size: 350px 388px;
+  background-position: bottom right;
+  max-width: 531px;
+  min-height: 388px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  flex-grow: 1;
 }
-.grid-image2 {
+.child-image2 {
   max-width: 241px;
   max-height: 185px;
 }
-.third {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
+.child3 {
+  background-image: url("../img/background-third.png");
+  background-repeat: no-repeat;
+  background-size: 350px 388px;
+  background-position: top right;
+  max-width: 531px;
+  min-height: 388px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  flex-grow: 1;
 }
-.grid-image3 {
+.child-image3 {
   max-width: 245px;
   max-height: 181px;
 }
-.fourth {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
+.child4 {
+  background-image: url("../img/background-fourth.png");
+  background-repeat: no-repeat;
+  background-size: 350px 388px;
+  background-position: top right;
+  max-width: 531px;
+  min-height: 388px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  flex-grow: 1;
 }
-.grid-image4 {
+.child-image4 {
   max-width: 230px;
   max-height: 201px;
 }
@@ -240,6 +264,7 @@ h3 {
   border: none;
   color: #212353;
   font-style: normal;
+  background: transparent;
   font-weight: 600;
   font-size: 16px;
   line-height: 160%;
@@ -254,13 +279,15 @@ h3 {
 .section4 {
   background: #9c69e2;
   border-radius: 50px;
-  width: 1118px;
-  height: 709px;
+  // max-width: 1118px;
+  width: 60%;
+  // max-height: 709px;
+  height: 60vh;
   padding: 50px;
   margin: auto;
-  display: grid;
-  grid-template-rows: repeat(15, 1fr);
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .testimonials {
   font-family: Helvetica;
@@ -269,8 +296,8 @@ h3 {
   font-size: 40px;
   line-height: 130%;
   color: #ffffff;
-  grid-row: 3 / 4;
-  grid-column: 2 / 6;
+  display: flex;
+  margin-left: 20px;
 }
 .rectangle4 {
   background: #ffffff;
@@ -279,13 +306,15 @@ h3 {
   max-width: 645px;
   max-height: 330px;
   display: flex;
+  justify-content: center;
+  align-self: center;
   padding: 20px;
-  grid-row: 5 / 14;
-  grid-column: 3 / 11;
 }
 .img4 {
   width: 90px;
   height: 90px;
+  display: flex;
+  align-self: center;
 }
 .web {
   color: #9c69e2;
@@ -301,6 +330,9 @@ h3 {
   font-weight: normal;
   font-size: 18px;
   line-height: 180%;
+  max-width: 385px;
+  max-height: 200px;
+  flex-shrink: 1;
 }
 .content4 {
   padding: 20px;
@@ -373,6 +405,7 @@ h5 {
 .footer-text {
   text-decoration: none;
   color: $font-purple;
+  line-height: 250%;
 }
 .footer-text:hover {
   font-weight: 600;
@@ -388,4 +421,43 @@ h6 {
   font-size: 12px;
   line-height: 180%;
   letter-spacing: 0.01em;
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+  .headline {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .shopping {
+    width: 100%;
+    height: 100%;
+  }
+  .section3 {
+    height: 205vh;
+  }
+
+  .section5 {
+    height: 100vh;
+  }
+  .image2 {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 470px) {
+  .top {
+    justify-content: center;
+    flex-direction: column;
+  }
 }
